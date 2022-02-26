@@ -6,4 +6,4 @@ A discord RPC for most of the applications. This RPC has 5+ Applications with Di
 
 ## Download
 
-To download the file just 
+To download the file [click here](https://github.com/Unerasable/ApplicationRPC/releases)

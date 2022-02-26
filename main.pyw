@@ -26,16 +26,19 @@ while True:
     elif "minecraft" in crtWin.lower():
         RPC.update(state="Minecraft", details="Playing Minecraft", large_image="minecraft")
     elif "discord" in crtWin.lower():
-        if x[1].lower() != " discord":
-            if "discord" in x[0].lower():
-                RPC.update(state="Discord", details="Reading DMs", large_image="discord")
+        try:
+            if x[1].lower() != " discord":
+                if "discord" in x[0].lower():
+                    RPC.update(state="Discord", details="Reading DMs", large_image="discord")
+                else:
+                    RPC.update(state="Discord", details=f"Reading {x[0]}-{x[1]}", large_image="discord")
             else:
-                RPC.update(state="Discord", details=f"Reading {x[0]}-{x[1]}", large_image="discord")
-        else:
-            if "discord" in x[0].lower():
-                RPC.update(state="Discord", details="Reading DMs", large_image="discord")
-            else:
-                RPC.update(state="Discord", details=f"Reading {x[0]}", large_image="discord")
+                if "discord" in x[0].lower():
+                    RPC.update(state="Discord", details="Reading DMs", large_image="discord")
+                else:
+                    RPC.update(state="Discord", details=f"Reading {x[0]}", large_image="discord")
+        except:
+            RPC.update(state="Discord", details="Reading DMs", large_image="discord")
     elif "visual studio code" in crtWin.lower():
         if "visual studio code" in x[0].lower():
             RPC.update(state="Visual Studio Code", details=f"Using Visual Studio Code", large_image="vscode")
